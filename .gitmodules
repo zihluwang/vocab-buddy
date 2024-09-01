@@ -1,0 +1,3 @@
+[submodule "vocab-buddy-server"]
+	path = vocab-buddy-server
+	url = ./vocab-buddy-server
