@@ -1,6 +1,0 @@
-[submodule "vocab-buddy-server"]
-	path = vocab-buddy-server
-	url = git@github.com:OnixByte/vocab-buddy-server.git
-[submodule "vocab-buddy-web"]
-	path = vocab-buddy-web
-	url = git@github.com:OnixByte/vocab-buddy-web.git
