@@ -1,0 +1,10 @@
+# Changes to Cross-Origin Resource Sharing in development mode
+vorbote:
+  web-dev:
+    cors:
+      enabled: true
+      allow-origin: '*'
+      allow-methods: [ POST, GET, OPTIONS, PATCH, DELETE, PUT ]
+      allow-headers: [ X-AUTH-KEY, Content-Type ]
+      allow-credentials: true
+      expose-headers: [ X-AUTH-KEY ]

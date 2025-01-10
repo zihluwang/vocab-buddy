@@ -1,0 +1,27 @@
+spring:
+  # Database configuration
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql-db:3306/vocab_buddy?useSSL=FALSE&allowPublicKeyRetrieval=true&characterEncoding=utf8
+    username: root
+    password: mpw:YTfKuPQUL92AeWexgxTaSqqxWnta4R1fLPbhnIahSlQ=
+    type: com.zaxxer.hikari.HikariDataSource
+  data:
+    redis:
+      host: redis-server
+      port: 6379
+      password: mpw:YTfKuPQUL92AeWexgxTaSqqxWnta4R1fLPbhnIahSlQ=
+
+logging:
+  file:
+    path: logs
+
+vorbote:
+  web-dev:
+    cors:
+      enabled: true
+      allow-origin: '*'
+      allow-methods: [ POST, GET, OPTIONS, PATCH, DELETE, PUT ]
+      allow-headers: [ X-AUTH-KEY, Content-Type ]
+      allow-credentials: true
+      expose-headers: [ X-AUTH-KEY ]

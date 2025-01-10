@@ -1,0 +1,44 @@
+spring:
+  servlet:
+    # 文件上传配置
+    multipart:
+      # 开启文件上传功能
+      enabled: true
+      # 设置最大文件大小
+      max-file-size: 10MB
+      # 设置请求最大大小
+      max-request-size: 20MB
+
+# 日志配置
+logging:
+  # 日志格式设置
+  pattern:
+    # 控制台格式设置，支持 ANSI 功能可添加颜色
+    console: '%clr(%d{${LOG_DATEFORMAT_PATTERN:dd/MMM/yyyy HH:mm:ss}}){faint} %clr(${LOG_LEVEL_PATTERN:%-5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}'
+    # 日志文件格式设置
+    file: '%d{${LOG_DATEFORMAT_PATTERN:dd/MMM/yyyy HH:mm:ss}} ${LOG_LEVEL_PATTERN:%-5p} ${PID:- } --- [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}'
+
+mybatis-plus:
+  type-aliases-package: cn.vorbote.vocabbuddy.model.proto
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/**.xml
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+
+# JSON Web Token configuration
+vorbote:
+  web-dev:
+    jwt:
+      # 开启 JWT 功能
+      enabled: true
+      # 设置 JWT 签发者
+      issuer: Theodore Hills < zihlu.wang@outlook.com >
+      # 设置密钥（该密钥经过 MPW 加密）
+      secret: mpw:xUdKPUgayim18goTjSZ5/tVIU8WS2c7ItuZ0GS3GC04=
+      # 采用HS256算法
+      algorithm: hs256
